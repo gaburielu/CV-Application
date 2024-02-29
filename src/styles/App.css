@@ -1,0 +1,122 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#body {
+  height: 100vh;
+  width: 100vw;
+  display: grid;
+  grid-template-columns: 4fr 2fr;
+  grid-template-rows: 1fr 9fr;
+  grid-template-areas:
+    "form head"
+    "form edit";
+}
+
+header {
+  grid-area: head;
+  background-color: antiquewhite;
+}
+
+/* EDITOR */
+
+section {
+  grid-area: edit;
+  background-color: aqua;
+}
+
+.editArea {
+  background-color: bisque;
+  height: 70vh;
+  overflow-y: scroll;
+}
+
+.editBtn {
+  font-size: medium;
+  width: 90%;
+  height: clamp(20px, 40px, 50px);
+  margin: 10px;
+}
+
+.edit-body {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-head {
+  text-align: center;
+}
+
+.list-delete {
+  display: flex;
+  width: 90%;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  height: 2rem;
+  overflow: hidden;
+}
+
+.list-delete button {
+}
+
+.edit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+
+.edit-input {
+  width: 90%;
+  height: 1.5rem;
+  font-size: 1rem;
+}
+
+.personal-edit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.personal-edit input,
+.personal-edit div {
+  width: 90%;
+  margin-bottom: 5%;
+}
+.personal-edit input {
+  height: 1.5rem;
+}
+
+.update-button {
+  width: clamp(120px, 80%, 80vw);
+  height: 1.7rem;
+  font-size: 1rem;
+}
+
+/* FORM */
+
+main {
+  overflow-y: scroll;
+  grid-area: form;
+  background-color: aliceblue;
+}
+
+.resume-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+#resume {
+  width: 90%;
+  aspect-ratio: 0.7071;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+}

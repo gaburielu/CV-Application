@@ -1,0 +1,32 @@
+main {
+  overflow-y: scroll;
+  grid-area: form;
+  background-color: #ada6a66c;
+}
+
+.resume-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+}
+
+#resume {
+  background: linear-gradient(
+    to bottom,
+    lightskyblue 15%,
+    aliceblue 10%,
+    aliceblue 100%
+  );
+  width: 90%;
+  aspect-ratio: 0.7071;
+  border-radius: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2 {
+  background-color: lightskyblue;
+}

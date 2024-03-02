@@ -33,12 +33,12 @@ const EducationSection = ({ education, setEducation }) => {
         <h2>Education</h2>
         <ul>
           {education.map((edu) => (
-            <div className="list-delete">
-              <p key={edu.id}>
+            <div key={edu.id} className="list-delete">
+              <p>
                 <b>{edu.institute}</b>
                 {": " + edu.level}
-                <button onClick={() => deleteEducation(edu.id)}>Delete</button>
               </p>
+              <button onClick={() => deleteEducation(edu.id)}>Delete</button>
             </div>
           ))}
         </ul>

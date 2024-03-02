@@ -32,8 +32,8 @@ const ExperienceSection = ({ experience, setExperience }) => {
         <h2>Experience</h2>
         <ul>
           {experience.map((xp) => (
-            <div className="list-delete">
-              <p key={xp.id}>
+            <div key={xp.id} className="list-delete">
+              <p >
                 <b>{xp.company}</b>
               </p>
               <button onClick={() => deleteExperience(xp.id)}>Delete</button>

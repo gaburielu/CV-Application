@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./styles/App.css";
+import "./styles/Form.css";
 import Editor from "./components/Editor";
 import Resume from "./components/Form";
 import { v4 as uuidv4 } from "uuid";

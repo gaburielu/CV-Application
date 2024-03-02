@@ -65,7 +65,7 @@ const PersonalSection = ({ personal, handleNewPersonal }) => {
           />
           <br />
           <button
-          className="update-button"
+          className="update-button-personal"
             onClick={() => {
               handleUpdatePersonal(item.id, item.title);
             }}

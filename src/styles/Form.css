@@ -5,28 +5,64 @@ main {
 }
 
 .resume-container {
-  width: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
-  padding: 40px 0;
+  padding: 40px;
 }
 
 #resume {
-  background: linear-gradient(
-    to bottom,
-    lightskyblue 15%,
-    aliceblue 10%,
-    aliceblue 100%
-  );
-  width: 90%;
+  background-color: aliceblue;
+  width: 99.9%;
   aspect-ratio: 0.7071;
   border-radius: 5px;
-  border: 1px solid black;
-  padding: 10px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
 }
 
-h2 {
-  background-color: lightskyblue;
+/* HEAD */
+
+.personal-header {
+}
+
+.personal-header p {
+  font-size: 1em;
+}
+
+.personal-head-top {
+  background-color: rgb(32, 41, 170);
+  color: aliceblue;
+  font-size: 1em;
+  padding: 10px 50px;
+}
+
+.personal-summary {
+  font-size: 1em;
+  padding: 0px 60px;
+}
+
+.form-section {
+  padding: 0px 4em;
+  margin: o;
+}
+
+.form-section-title {
+  padding: 0.5em 0;
+  margin: 0;
+  font-size: x-large;
+}
+
+.form-section-mid {
+  display: flex;
+  justify-content: space-between;
+}
+h4 {
+  margin: 0;
+}
+
+.content-header {
+  align-self: center;
+  margin: 0;
+  padding: 0;
 }

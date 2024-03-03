@@ -1,79 +1,58 @@
 import { useState } from "react";
 
-const PersonalSection = ({ personal, handleNewPersonal }) => {
-  const [nameValue, setNameValue] = useState("");
-  const [contactValue, setContactValue] = useState("");
-  const [emailValue, setEmailValue] = useState("");
-
-  const handleNameChange = (e) => {
-    setNameValue(e.target.value);
+const PersonalSection = ({ personal, setPersonal }) => {
+  const updateName = (newName) => {
+    setPersonal((prevPersonal) => ({
+      ...prevPersonal,
+      name: newName,
+    }));
   };
-
-  const handleContactChange = (e) => {
-    setContactValue(e.target.value);
+  const updatePhone = (newPhone) => {
+    setPersonal((prevPersonal) => ({
+      ...prevPersonal,
+      phone: newPhone,
+    }));
   };
-
-  const handleEmailChange = (e) => {
-    setEmailValue(e.target.value);
+  const updateEmail = (newEmail) => {
+    setPersonal((prevPersonal) => ({
+      ...prevPersonal,
+      email: newEmail,
+    }));
   };
-
-  const handleUpdatePersonal = (id, field) => {
-    let newValue;
-
-    if (field === "Name") {
-      newValue = nameValue;
-    } else if (field === "Contact") {
-      newValue = contactValue;
-    } else {
-      newValue = emailValue;
-    }
-    
-    handleNewPersonal(id, newValue);
-
-    if (field === "Name") {
-      setNameValue("");
-    } else if (field === "Contact") {
-      setContactValue("");
-    } else if (field === "Email") {
-      setEmailValue("");
-    }
+  const updateSummary = (newSummary) => {
+    setPersonal((prevPersonal) => ({
+      ...prevPersonal,
+      summary: newSummary,
+    }));
   };
 
   return (
     <div className="personal-edit">
-      {personal.map((item) => (
-        <div key={item.id}>
-          <p>
-            {item.title}: {item.value}
-          </p>
-          <input
-            type="text"
-            value={
-              item.title === "Name"
-                ? nameValue
-                : item.title === "Contact"
-                ? contactValue
-                : emailValue
-            }
-            onChange={
-              item.title === "Name"
-                ? handleNameChange
-                : item.title === "Contact"
-                ? handleContactChange
-                : handleEmailChange
-            }
-          />
-          <br />
-          <button
-          className="update-button-personal"
-            onClick={() => {
-              handleUpdatePersonal(item.id, item.title);
-            }}
-          >
-            Update
-          </button>
-        </div>
-      ))}
+      <input
+        className="edit-input"
+        type="text"
+        onChange={(e) => updateName(e.target.value)}
+        placeholder={personal.name}
+      />
+      <input
+        className="edit-input"
+        type="number"
+        onChange={(e) => updatePhone(e.target.value)}
+        placeholder={personal.phone}
+      />
+      <input
+        className="edit-input"
+        type="email"
+        onChange={(e) => updateEmail(e.target.value)}
+        placeholder={personal.email}
+        required
+      />
+      <textarea
+        className="edit-summary"
+        type="text"
+        onChange={(e) => updateSummary(e.target.value)}
+        placeholder={personal.summary}
+      />
     </div>
   );
 };

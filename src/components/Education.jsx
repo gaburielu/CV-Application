@@ -60,7 +60,7 @@ const EducationSection = ({ education, setEducation }) => {
           onChange={(e) =>
             setNewEducation({ ...newEducation, level: e.target.value })
           }
-          placeholder="Education Level"
+          placeholder="Name of certification"
         />
         <input
           className="edit-input"

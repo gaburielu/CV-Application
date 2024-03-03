@@ -3,37 +3,57 @@ import "./styles/App.css";
 import "./styles/Form.css";
 import Editor from "./components/Editor";
 import Resume from "./components/Form";
-import { v4 as uuidv4 } from "uuid";
+import JsPDF from "jspdf";
+import html2pdf from "html2pdf.js";
 
 function App() {
-  
   //PERSONAL INFO
 
-  const [personal, setPersonal] = useState([
-    { title: "Name", value: "John Doe", id: uuidv4() },
-    { title: "Contact", value: "000", id: uuidv4() },
-    { title: "Email", value: "placeholder@resume.com", id: uuidv4() },
-  ]);
-
-  const handleNewPersonal = (id, newValue) => {
-    const updatedPersonal = personal.map((item) =>
-      item.id === id ? { ...item, value: newValue } : item
-    );
-    setPersonal(updatedPersonal);
-  };
+  const [personal, setPersonal] = useState({
+    name: "John Doe",
+    phone: "000 000 000",
+    email: "placeholder@email.com",
+    summary: "Brief summary of yourself and your resume",
+  });
 
   //EDUCATION & EXPERIENCE
 
   const [education, setEducation] = useState([]);
   const [experience, setExperience] = useState([]);
 
+  //HEADER
+
+  const generatePDF = () => {
+    const element = document.querySelector("#resume");
+
+    html2pdf(element, {
+      margin: [0, 0, 0, 0],
+      filename: "report.pdf",
+      image: { type: "jpeg", quality: 0.98 },
+      html2canvas: { scale: 2, useCORS: true },
+      jsPDF: { unit: "mm", format: "a4", orientation: "portrait" },
+    });
+  };
+
+  const Head = () => {
+    return (
+      <div className="header-container">
+        <button className="download-button" onClick={generatePDF}>
+          Download Form
+        </button>
+      </div>
+    );
+  };
+
   return (
     <div id="body">
-      <header className="header">head</header>
+      <header>
+        <Head />
+      </header>
       <section className="editResume">
         <Editor
           personal={personal}
-          handleNewPersonal={handleNewPersonal}
+          setPersonal={setPersonal}
           education={education}
           setEducation={setEducation}
           experience={experience}
@@ -41,7 +61,11 @@ function App() {
         />
       </section>
       <main>
-        <Resume personal={personal} education={education} experience={experience}/>
+        <Resume
+          personal={personal}
+          education={education}
+          experience={experience}
+        />
       </main>
     </div>
   );

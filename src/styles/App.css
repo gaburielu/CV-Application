@@ -20,6 +20,28 @@ header {
   background-color: antiquewhite;
 }
 
+.header-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.download-button {
+  font-size: medium;
+  font-weight: bolder;
+  width: 50%;
+  height: clamp(30px, 35px, 8vh);
+  margin: 10px;
+  margin-left: 25px;
+  padding: 0;
+  border-radius: 10px;
+  border: 2px solid plum;
+}
+
+.download-button:hover {
+  border: 4px solid plum;
+}
+
 /* EDITOR */
 
 section {
@@ -66,9 +88,6 @@ section {
   font-size: large;
 }
 
-.list-delete button {
-}
-
 .edit-content {
   display: flex;
   flex-direction: column;
@@ -82,7 +101,7 @@ section {
   border-radius: 5px;
   padding: 0 15px;
   height: 40px;
-  width: 90%;
+  width: 85%;
   margin: 5px 0;
   font-size: 1rem;
 }
@@ -95,46 +114,38 @@ section {
   justify-content: center;
 }
 
-.personal-edit p {
-  font-size: large;
-}
-
-.personal-edit input,
-.personal-edit div {
-  width: 90%;
-  margin-bottom: clamp(5px, 3%, 10px);
-}
-.personal-edit input {
-  height: 2rem;
+.edit-input,
+.edit-summary {
   border: 1px solid #2e2e2e;
   border-radius: 5px;
   padding: 0 15px;
   font-size: 1rem;
-  width: 90%;
+  width: 80%;
+  margin-bottom: clamp(5px, 3%, 10px);
 }
 
-.update-button,
-.update-button-personal {
+.edit-input {
+  height: 2rem;
+}
+
+.edit-summary {
+  height: 10rem;
+  margin-top: 5px;
+  padding-top: 5px;
+}
+
+.update-button {
   overflow: hidden;
   font-size: medium;
   font-weight: bold;
   border-radius: 10px;
-  border: 2px solid lightblue;
-}
-
-.update-button {
+  border: 2px solid plum;
   width: clamp(120px, 75%, 20vw);
   height: clamp(50px, 1rem, 10vh);
 }
 
-.update-button-personal {
-  width: clamp(120px, 50%, 20vw);
-  height: clamp(20px, 40px, 10vh);
-}
-
-.update-button:hover,
-.update-button-personal:hover {
-  border: 4px solid lightblue;
+.update-button:hover {
+  border: 4px solid plum;
 }
 
 h2 {

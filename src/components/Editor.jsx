@@ -5,7 +5,7 @@ import ExperienceSection from "./Experience";
 
 export default function Editor({
   personal,
-  handleNewPersonal,
+  setPersonal,
   education,
   setEducation,
   experience,
@@ -36,7 +36,7 @@ export default function Editor({
       >
         <PersonalSection
           personal={personal}
-          handleNewPersonal={handleNewPersonal}
+          setPersonal={setPersonal}
         />
       </EditSection>
     </>
